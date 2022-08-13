@@ -3,7 +3,7 @@ set -e
 
 # Set options based on user input
 if [ -z "$INPUT_DESTINATION_PATH" ]; then
-	DESTINATION_PATH="./po"
+	DESTINATION_PATH="$GITHUB_WORKSPACE/po"
 else
 	DESTINATION_PATH=$INPUT_DESTINATION_PATH
 fi

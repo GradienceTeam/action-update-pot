@@ -4,7 +4,6 @@ author: 'AdwCustomizerTeam'
 inputs:
   destination_path:
     description: 'Destination path to save generated .pot file'
-    default: './po'
     required: false
   slug:
     description: 'Project slug. Defaults to the Github repository name.'
