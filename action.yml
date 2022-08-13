@@ -1,0 +1,33 @@
+name: 'Update .pot'
+description: 'Update .pot file'
+author: 'AdwCustomizerTeam'
+inputs:
+  destination_path:
+    description: 'Destination path to save generated .pot file'
+    default: './po'
+    required: false
+  slug:
+    description: 'Project slug. Defaults to the Github repository name.'
+    required: false
+  text_domain:
+    description: 'Text domain to look for in the source code. Defaults to the project slug.'
+    required: false
+  title:
+    description: 'Replace "SOME DESCRIPTIVE TITLE."'
+    required: false
+  copyright:
+    description: 'Replace "YEAR THE PACKAGE S COPYRIGHT HOLDER"'
+    required: false
+  license:
+    description: 'Replace "same license as the PACKAGE package"'
+    required: False
+  author:
+    description: 'Replace "FIRST AUTHOR <EMAIL@ADDRESS>"'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.destination_path }}
+    - ${{ inputs.slug }}
+    - ${{ inputs.text_domain }}
