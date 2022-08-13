@@ -110,7 +110,7 @@ find "$DESTINATION_PATH" -type f -name "*.po" | sed -rn "s:$regex:\1:p" > "$DEST
 if [ "$(git status $POT_PATH --porcelain)" != "" ]; then
 	echo "🔼 Pushing to repository"
 	git add "$POT_PATH"
-	git commit -m "🔄 Generated POT File"
+	git commit -m "ci: generate .pot file"
 	if [ "$FORK" == true ]; then
 		echo "debug: $REPO_NAME"
 		git config credential.https://github.com/.helper "! f() { echo username=x-access-token; echo password=$TOKEN; };f"
