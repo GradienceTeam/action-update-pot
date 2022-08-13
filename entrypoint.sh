@@ -95,8 +95,6 @@ fi
 
 # Generate POT file.
 echo "🔨 Generating POT file"
-wp i18n make-pot . "$POT_PATH" --domain="$TEXT_DOMAIN" --slug="$SLUG" --allow-root --color
-
 xgettext -f "$DESTINATION_PATH"/POTFILES -o "$DESTINATION_PATH"/${$SLUG}.pot --add-comments=Translators --keyword=_ --keyword=C_1c,2 --from-code=UTF-8
 sed -i "s/SOME DESCRIPTIVE TITLE./$TITLE/" "$DESTINATION_PATH"/${$SLUG}.pot
 sed -i "s/YEAR THE PACKAGE'S COPYRIGHT HOLDER/$(date +%Y) $COPYRIGHT/" "$DESTINATION_PATH"/${$SLUG}.pot
