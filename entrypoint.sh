@@ -95,11 +95,11 @@ fi
 
 # Generate POT file.
 echo "🔨 Generating POT file"
-xgettext -f "$DESTINATION_PATH"/POTFILES -o "$DESTINATION_PATH"/${$SLUG}.pot --add-comments=Translators --keyword=_ --keyword=C_1c,2 --from-code=UTF-8
-sed -i "s/SOME DESCRIPTIVE TITLE./$TITLE/" "$DESTINATION_PATH"/${$SLUG}.pot
-sed -i "s/YEAR THE PACKAGE'S COPYRIGHT HOLDER/$(date +%Y) $COPYRIGHT/" "$DESTINATION_PATH"/${$SLUG}.pot
-sed -i "s@same license as the PACKAGE package.@$LICENSE license.@" "$DESTINATION_PATH"/${$SLUG}.pot
-sed -i "s/FIRST AUTHOR <EMAIL@ADDRESS>, YEAR./$AUTHOR, $(date +%Y)./" "$DESTINATION_PATH"/${$SLUG}.pot
+xgettext -f "$DESTINATION_PATH"/POTFILES -o "$DESTINATION_PATH"/$SLUG.pot --add-comments=Translators --keyword=_ --keyword=C_1c,2 --from-code=UTF-8
+sed -i "s/SOME DESCRIPTIVE TITLE./$TITLE/" "$DESTINATION_PATH"/$SLUG.pot
+sed -i "s/YEAR THE PACKAGE'S COPYRIGHT HOLDER/$(date +%Y) $COPYRIGHT/" "$DESTINATION_PATH"/$SLUG.pot
+sed -i "s@same license as the PACKAGE package.@$LICENSE license.@" "$DESTINATION_PATH"/$SLUG.pot
+sed -i "s/FIRST AUTHOR <EMAIL@ADDRESS>, YEAR./$AUTHOR, $(date +%Y)./" "$DESTINATION_PATH"/$SLUG.pot
 
 regex="$DESTINATION_PATH/([a-zA-Z_]*).po"
 find "$DESTINATION_PATH" -type f -name "*.po" | sed -rn "s:$regex:\1:p" > "$DESTINATION_PATH/LINGUAS"
