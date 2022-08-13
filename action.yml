@@ -34,3 +34,6 @@ runs:
     - ${{ inputs.copyright }}
     - ${{ inputs.license }}
     - ${{ inputs.author }}
+branding:
+  icon: book-open
+  color: red
