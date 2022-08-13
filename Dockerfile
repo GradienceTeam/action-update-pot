@@ -1,8 +1,8 @@
 # Container image that runs your code
-FROM alpine:3.10
+FROM alpine:latest
 
 USER root
-RUN apk add --no-cache git jq gettext
+RUN apk add --no-cache git jq gettext bash
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
