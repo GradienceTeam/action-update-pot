@@ -30,3 +30,7 @@ runs:
     - ${{ inputs.destination_path }}
     - ${{ inputs.slug }}
     - ${{ inputs.text_domain }}
+    - ${{ inputs.title }}
+    - ${{ inputs.copyright }}
+    - ${{ inputs.license }}
+    - ${{ inputs.author }}
