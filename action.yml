@@ -23,6 +23,12 @@ inputs:
   author:
     description: 'Replace "FIRST AUTHOR <EMAIL@ADDRESS>"'
     required: false
+  commiter:
+    default: "github-actions[bot]"
+    required: false
+  commiter_email:
+    default: "41898282+github-actions[bot]@users.noreply.github.com"
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
