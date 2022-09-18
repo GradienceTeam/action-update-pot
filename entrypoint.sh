@@ -61,8 +61,8 @@ if [ ! -d "$DESTINATION_PATH" ]; then
 fi
 
 # Setup Git config and push .pot file to github repo
-git config --global user.name "AdwCustomizer"
-git config --global user.email "AdwCustomizerTeam@proton.me"
+git config --global user.name "$INPUT_COMMITER"
+git config --global user.email "$INPUT_COMMITER_EMAIL"
 git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
 REPO_NAME="$GITHUB_REPOSITORY"
