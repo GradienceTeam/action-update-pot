@@ -1,6 +1,6 @@
 name: 'Update .pot'
 description: 'Update .pot file'
-author: 'AdwCustomizerTeam'
+author: 'GradienceTeam'
 inputs:
   destination_path:
     description: 'Destination path to save generated .pot file'
