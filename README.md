@@ -27,15 +27,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Update .pot
-        uses: AdwCustomizerTeam/action-update-pot@main
+        uses: GradienceTeam/action-update-pot@main
         with:
-          title: "Adwaita Manager POT file"
-          copyright: "Adwaita Manager Team"
+          title: "Gradience POT file"
+          copyright: "Gradience Team"
           license: "GNU GPLv3"
-          author: "Adwaita Manager Team"
+          author: "Gradience Team"
+          commiter: "Gradience Bot"
+          commiter_email: "AdwCustomizerTeam@proton.me"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -45,12 +47,14 @@ jobs:
 
 You must also provide an `GITHUB_TOKEN` in `env`
 
-| Name               | Description                                                               | Default            | Required |
-| ------------------ | ------------------------------------------------------------------------- | ------------------ | -------- |
-| `destination_path` | Destination path to save generated .pot file                              | `/po`              | false    |
-| `slug`             | Project slug. Defaults to the Github repository name.                     | $GITHUB_REPOSITORY | false    |
-| `text_domain`      | Text domain to look for in the source code. Defaults to the project slug. | `slug`               | false    |
-| `title`            | Replace "SOME DESCRIPTIVE TITLE."'                                        |                    | false    |
-| `copyright`        | Replace "YEAR THE PACKAGE S COPYRIGHT HOLDER"'                            |                    | false    |
-| `license`          | Replace "same license as the PACKAGE package"'                            |                    | False    |
-| `author`           | Replace "FIRST AUTHOR <EMAIL@ADDRESS>"'                                   |                    | false    |
+| Name               | Description                                                               | Default                                                 | Required |
+|--------------------|---------------------------------------------------------------------------|---------------------------------------------------------|----------|
+| `destination_path` | Destination path to save generated .pot file                              | `/po`                                                   | false    |
+| `slug`             | Project slug. Defaults to the Github repository name.                     | $GITHUB_REPOSITORY                                      | false    |
+| `text_domain`      | Text domain to look for in the source code. Defaults to the project slug. | `slug`                                                  | false    |
+| `title`            | Replace "SOME DESCRIPTIVE TITLE."'                                        |                                                         | false    |
+| `copyright`        | Replace "YEAR THE PACKAGE S COPYRIGHT HOLDER"'                            |                                                         | false    |
+| `license`          | Replace "same license as the PACKAGE package"'                            |                                                         | False    |
+| `author`           | Replace "FIRST AUTHOR <EMAIL@ADDRESS>"'                                   |                                                         | false    |
+| `commiter`         | Setting committer                                                         | `github-actions[bot]`                                   | false    |
+| `commiter_email`   | Setting committer email                                                   | `41898282+github-actions[bot]@users.noreply.github.com` | false    |
